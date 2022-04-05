@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <!-- 针对ie浏览器的特殊配置 让ie浏览器以最高级别来渲染页面 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 开启移动段的理想视口 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 图标  <%= BASE_URL %> 默认是public里的 -->
+    <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
+    <!-- 配置网页的标题   <%= htmlWebpackPlugin.options.title %>去package.json 找到name作为标题-->
+    <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
+ 
+    <!-- 20,29,30 里用到的一个样式    引入第三方样式      用的时候再解开  ⭐⭐⭐⭐⭐⭐⭐-->
+     <link rel="stylesheet" href="<%= BASE_URL %>css/bootstrap.css"> 
+  </head>
+  <body>
+    <!-- 当浏览器的不支持js时候,该标签的元素就会被渲染 -->
+    <!-- <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript> -->
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

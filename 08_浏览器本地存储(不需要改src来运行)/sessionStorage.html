@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H2>sessionStorage  会话存储空间</H2>
+    <button onclick="saveData()">点我保存数据</button><br><br>
+    <button onclick="readData()">点我读取数据</button><br><br>
+    <button onclick="deleteData()">点我删除数据</button><br><br>
+    <button onclick="deleteAllData()">点我删除所有数据</button>
+</body>
+<script> 
+//sessionStorage 关闭浏览器保存的数据也不会消失(区别), 它和localStorage的api一样
+
+//open with live server  打开检查找到应用 找到会话存储空间，然后点击(点我保存数据)这个按钮
+// 发现下方填写的就出现在浏览器里了
+let p={name:'拐子',age:18}
+    function saveData(){
+        // key 和 value 都要是字符串形式  如果下面输入的不是String类型，他会强制给你转换的
+        window.sessionStorage.setItem('lala','hello!');
+        sessionStorage.setItem('lala','我替换了hello！');
+        sessionStorage.setItem('haha',123);
+        //sessionStorage.setItem('person',p); p输出无法查看具体数据
+        //  JSON.stringify()可以把对象转变为字符串并且可以体现出来
+        sessionStorage.setItem('person',JSON.stringify(p));
+    }
+    function readData(){
+        console.log(window.sessionStorage.getItem('haha'));
+        console.log(sessionStorage.getItem('person'));
+        
+        //JSON.parse() 方法将数据转换为 JavaScript 对象。 
+        const result=sessionStorage.getItem('person')
+        console.log(JSON.parse(result));
+    }
+    function deleteData(){
+        sessionStorage.removeItem('haha');
+
+    }
+    function deleteAllData(){
+        sessionStorage.clear();
+    }
+    //如果xxxStroage.getItem(xxx)如果xxx对应的值找不到,返回值是null
+    // JSON.parse(null)结果依然是null
+</script>
+</html>
